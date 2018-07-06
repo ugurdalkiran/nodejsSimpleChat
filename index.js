@@ -12,9 +12,9 @@ io.on('connection', function(socket){
 
 	// oku
 
-	fs.readFile('/metinler.txt', 'utf8', function(err, data) {
+	fs.readFile('./metinler.txt', 'utf8', function(err, data) {
 
-		io.emit('txtMesajlari', data);
+		if ( data != null ){ io.emit('txtMesajlari', data); }
 
 	});
 
@@ -24,7 +24,7 @@ io.on('connection', function(socket){
 
   	// txt yaz
 
-  	fs.appendFile("/metinler.txt", msg + '___<--->___', 'utf8', function(err) { /**/ });
+  	fs.appendFile("./metinler.txt", msg + '___<--->___', 'utf8', function(err) { /**/ });
 
   	// txt yaz
 
